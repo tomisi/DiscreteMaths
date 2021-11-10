@@ -1,0 +1,50 @@
+# Question 2:Write a programme that takes as input 2 finite SETS of any size, A;B, and outputs the following:
+# a) the truth value of B "is a subset" A
+# b) the set A - B
+# c) the set A x B.
+
+# we will start by creating 2 variables to store set A and Set B
+A = set()
+B = set()
+
+# then we will ask the user to enter the number of element they want for the first set
+# followed by it's respective elements
+n1 = int(input("\n enter the number of elements you want for set A: "))
+print("\n Please enter your elements for set A")
+
+for i in range(0, n1):
+#this variable will store the the element the user will input
+    elements_list1 = input()
+
+#this will allow the addition of elements of the for loop through each iteration that will take place
+    A.add(elements_list1)
+
+#this will allow the user to view the elements in set A
+print("this is set A : ", A)
+
+# then we will ask the user to enter the number of element they want for the second set
+# followed by it's respective elements
+n2 = int(input("\n enter the number of elements you want for set B: "))
+print("\n Please enter your elements for set B")
+
+for i in range(0, n2):
+    # this variable will store the the element the user will input
+    elements_list2 = input()
+
+    # this will allow the addition of elements of the for loop through each iteration that will take place
+    B.add(elements_list2)  # Adding the element through each iteration of the for loop
+
+#this will allow the user to view the elements in set A
+print("this is set B: ", B)
+
+# using the builtin function issubset(), the user will know whether B is a subset of A
+print("\n A. The truth value of B 'is a subset of' A is " + str(B.issubset(A)))
+
+#the the user will see the result of  A - B
+print("\n B. The set for A - B: ")
+print(A - B)
+
+#the the user will see the result cartesian product A x B
+print("\n c. The set A x B:")
+print(sorted((i, j) for i in A for j in B))
+

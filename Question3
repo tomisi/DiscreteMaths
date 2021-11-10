@@ -1,0 +1,26 @@
+import itertools
+x = []
+y = []
+n = int(input("Enter number of elements for the first set : "))
+for i in range(0, n):
+    ele = input()
+    x.append(ele)
+m = int(input("Enter number of elements for the second set : "))
+for i in range(0, n):
+    ele = input()
+    y.append(ele)
+A = set(x)
+B = set(y)
+if (A).issubset((B)):
+    print(True)
+else:
+    print(False)
+print(set(A)- set(B))
+cartesian_product = itertools.product(A, B)
+#Calculate product of 'x_list' and 'y_list'
+
+cartesian_list = set(cartesian_product)
+#Convert product to a list
+
+print(cartesian_list)
+

@@ -1,0 +1,39 @@
+# Question 1:  Write a python programme to test if a given list of elements constitutes a set. It should take as its input a
+# list of elements and should output a True or False value. If the truth value is False then
+#it must also output the list converted to a set or to a list which represents the set.
+
+# the first thing that needs to be done is to create an empty list
+my_list = []
+
+# Asking number of elements as input
+n = int(input("\n how many numbers do you want your list to have?: "))
+print("enter the numbers you want:")
+
+# to iterate, we're gonna use the for loop
+for i in range(0, n):
+
+    # this variable will store the element input by the user
+    elements_list = input()
+
+    # this will add the element through each iteration of the for loop
+    my_list.append(elements_list)
+
+# Using the set() python function to convert from the list datatype to the set datatype.
+# this variable will convert the list to a set
+my_list_set = set(my_list)
+
+# this variable will compare the lengths of the list and the set created from the list
+truth_value = (len(my_list) == len(my_list_set)) #this will let the user know if the list is a set
+
+#now we're gonna print the list of numbers input by the user
+print("\n The list is: " + str(my_list))
+
+# conditional if-else statement to print the truth value of the comparison of lengths
+if truth_value:
+    # if the variable 'truth_value' is True, print statement to be executed
+    print("\n" + str(truth_value) + ", this list " + str(my_list) + " is a set")
+
+else:
+    # if the variable truth_value is False, print statement to be executed
+    print("\n" + str(truth_value) + ", the set should be: " + str(sorted(list(my_list_set))))
+
